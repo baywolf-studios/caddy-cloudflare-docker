@@ -101,11 +101,11 @@ jobs:
           Write-Output "Latest Caddy Cloudflare Tag" $latestCaddyCloudflareTag
 
           if ($latestCaddyCloudflareTag -ne $latestCaddyTag) {
-            echo ::set-output name=needs-updating::true
-            echo ::set-output name=buildertag::"$latestCaddyTag"+"-builder"
-            echo ::set-output name=basetag::$latestCaddyTag
+            Write-Output "::set-output name=needs-updating::true"
+            Write-Output "::set-output name=buildertag::${latestCaddyTag}-builder"
+            Write-Output "::set-output name=basetag::$latestCaddyTag"
           } else {
-            echo ::set-output name=needs-updating::false
+            Write-Output "::set-output name=needs-updating::false"
           }
         shell: pwsh 
 
