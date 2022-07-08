@@ -14,8 +14,8 @@ jobs:
         id: check
         uses: lucacome/docker-image-update-checker@v1
         with:
-          base-image: library/caddy:2
-          image: baywolfstudios/caddy-cloudflare:2
+          base-image: library/caddy:latest
+          image: baywolfstudios/caddy-cloudflare:latest
           
       -
         name: Set up QEMU
