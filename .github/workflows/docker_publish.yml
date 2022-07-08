@@ -132,7 +132,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: baywolfstudios/caddy-cloudflare:2
+          tags: baywolfstudios/caddy-cloudflare:${{ steps.check.outputs.basetag }}
           build-args: |
             buildertag=${{ steps.check.outputs.buildertag }}
             basetag=${{ steps.check.outputs.basetag }}
