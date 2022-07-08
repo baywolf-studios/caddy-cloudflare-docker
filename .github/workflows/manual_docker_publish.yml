@@ -1,7 +1,16 @@
-name: Docker Publish
+name: Manual Docker Publish
 
 on:
   workflow_dispatch:
+    inputs:
+      builder-tag:
+        description: 'Builder Tag'     
+        required: true
+        default: 'builder'
+      base-tag:
+        description: 'Base Tag'     
+        required: true
+        default: 'latest'
 
 jobs:
   docker:
@@ -24,4 +33,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: baywolfstudios/caddy-cloudflare:2
+          tags: baywolfstudios/caddy-cloudflare:${{ github.event.inputs.base-tag }}
+          build-args: |
+            builder-tag=${{ github.event.inputs.builder-tag }}
+            base-tag=${{ github.event.inputs.base-tag }}

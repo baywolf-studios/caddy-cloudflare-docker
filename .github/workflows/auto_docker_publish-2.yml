@@ -1,4 +1,4 @@
-name: Base Image Updated Docker Publish
+name: Auto Docker Publish - 2
 
 on:
   workflow_dispatch:
@@ -41,4 +41,7 @@ jobs:
         with:
           push: true
           tags: baywolfstudios/caddy-cloudflare:2
+          build-args: |
+            builder-tag=2-builder
+            base-tag=2
         if: steps.check.outputs.needs-updating == 'true'
