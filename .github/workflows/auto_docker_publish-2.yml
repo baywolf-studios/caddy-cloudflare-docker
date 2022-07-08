@@ -42,6 +42,6 @@ jobs:
           push: true
           tags: baywolfstudios/caddy-cloudflare:2
           build-args: |
-            builder-tag=2-builder
-            base-tag=2
+            buildertag=2-builder
+            basetag=2
         if: steps.check.outputs.needs-updating == 'true'

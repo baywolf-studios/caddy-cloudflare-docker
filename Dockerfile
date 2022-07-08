@@ -1,11 +1,11 @@
-ARG builder-tag=builder
-ARG base-tag=latest
+ARG buildertag=caddy:builder
+ARG basetag=caddy:latest
 
-FROM caddy:${builder-tag} AS builder
+FROM caddy:${buildertag} AS builder
 
 RUN xcaddy build \
     --with github.com/caddy-dns/cloudflare
 
-FROM caddy:${base-tag}
+FROM caddy:${basetag}
 
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy

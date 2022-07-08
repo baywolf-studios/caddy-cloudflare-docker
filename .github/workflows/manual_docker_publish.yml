@@ -35,5 +35,5 @@ jobs:
           push: true
           tags: baywolfstudios/caddy-cloudflare:${{ github.event.inputs.base-tag }}
           build-args: |
-            builder-tag=${{ github.event.inputs.builder-tag }}
-            base-tag=${{ github.event.inputs.base-tag }}
+            buildertagtag=${{ github.event.inputs.builder-tag }}
+            basetag=${{ github.event.inputs.base-tag }}
